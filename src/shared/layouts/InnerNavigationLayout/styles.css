@@ -1,0 +1,66 @@
+@import 'type';
+@import 'colors';
+@import 'metrics';
+
+.INLayout {
+    width: 100%;
+}
+
+.INLayoutHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $color-greyscale-light;
+    justify-content: space-between;
+    padding: 16.5px 0;
+
+    .INLayoutHeaderTitleWrapper {
+        display: flex;   
+        align-items: center;
+
+        .INLayoutHeaderTitle {
+            font-size: 1.5rem;
+            color: $color-greyscale-darkest;
+            width: 225px;
+        }
+    }
+
+    .INLayoutHeaderTitle {
+        font-size: 1.5rem;
+        color: $color-greyscale-darkest;
+        padding-bottom: 10px;
+
+        &.active {
+            border-bottom-style: solid;
+            border-bottom-width: 3px;
+            border-bottom-color: $color-primary;
+            font-weight: bold;
+        }
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.INLayoutBody {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    .INLayoutBodyNavigation {
+        flex: 0 0 225px;
+        padding-top: 29.5px;
+    }
+    
+    .INLayoutBodyMain {
+        flex: 1 1 auto;
+        padding: 29.5px 30px 0;
+    }
+}

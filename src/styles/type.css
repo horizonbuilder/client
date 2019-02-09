@@ -1,0 +1,54 @@
+@import 'colors';
+@import 'fonts.css';
+@import 'metrics';
+
+@define-extend page-title {
+  font-family: $font-family-primary;
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+  text-align: center;
+  color: $black-70;
+}
+
+@define-extend section-heading {
+  font-family: $font-family-primary;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: #626262;
+}
+
+@define-extend subheading {
+  font-family: $font-family-secondary;
+  font-size: 14px;
+  text-align: left;
+  color: $black-50;
+}
+
+@define-extend input-label {
+  font-family: $font-family-primary;
+  font-size: 14px;
+  text-align: left;
+  color: #626262;
+}
+
+@define-extend input-placeholder {
+  font-family: $font-family-primary;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: left;
+  color: $gray;
+}
+
+@define-extend label {
+  font-family: $font-family-primary;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: $black-30;
+}
+
+@define-extend workfile-tab-title {
+  font-family: $font-family-primary;
+  font-size: 12px;
+}

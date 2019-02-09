@@ -1,0 +1,65 @@
+@import 'shadow';
+@import 'colors';
+@import 'type';
+
+.settingsLayout{
+    display: flex;
+    width: 100%;
+    background-color: $color-greyscale-lightest;
+
+    .sidebar{
+        background-color: white;
+        flex: 0 0 300px;
+        box-shadow: 0 5px 9px 0px rgba(0, 0, 0, .16);
+        padding-left: 4rem;
+        box-sizing: border-box;
+        padding-right: 2rem;
+        overflow: hidden;
+
+        .sidebarHeader{
+            padding: 2.25rem 0;
+            display: flex;
+            position: relative;
+            left: -2rem;
+            margin-right: -2rem;
+
+            .backButton{
+                flex: 0 0 2rem;
+                display: flex;
+                justify-content: center;
+                font-size: 1rem;
+                align-items: flex-start;
+                padding-top: 0.3rem;
+
+                &, &:active{
+                    color: $color-greyscale-darkest;
+                }
+            }
+
+            .sidebarTitle{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 1.5rem;
+                flex: 1 1 auto;
+
+                span{
+                    max-width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+
+        .sidebarContent{}
+    }
+
+    .content{
+        flex: 1 1 auto;
+        padding: 2.35rem 4rem;
+
+        &.noPadding{
+             padding: 0;
+         }
+    }
+}

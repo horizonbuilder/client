@@ -1,0 +1,26 @@
+.tabMenu {
+  float: left;
+  width: 20%;
+  height: 62vh;
+  padding: 0;
+  margin: 0;
+  background: #eee;
+}
+
+.tabMenu li {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.tabMenu li button {
+  width: 100%;
+  height: 4em;
+  margin: 0;
+  background: #eee;
+  border: none;
+}
+
+.tabMenu li button.selected {
+  background-color: #ccc;
+}

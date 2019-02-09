@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "lib": ["es2017", "dom"],
+    "baseUrl": "./typings"
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "node_modules/topsort/lib/topsort.ts"
+  ]
+}

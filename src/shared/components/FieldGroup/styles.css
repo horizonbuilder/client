@@ -1,0 +1,29 @@
+@import 'colors';
+@import 'fonts';
+
+.Group {
+  margin: 0 0 1rem;
+}
+
+.GroupName {
+  font-size: 18px;
+  font-family: $font-family-primary;
+  font-weight: bold;
+  color: $color-greyscale-dark;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.GroupContent {
+  display: flex;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

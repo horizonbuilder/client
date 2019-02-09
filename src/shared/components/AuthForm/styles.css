@@ -1,0 +1,31 @@
+@import 'colors';
+@import 'shadow';
+@import 'type';
+
+.AuthForm {
+  background: $white;
+  box-shadow: $standard-shadow;
+  border-radius: 3px;
+  padding: 0.5rem;
+  width: 30%;
+}
+
+.AuthFormTitle {
+  @extend page-title;
+  margin: 0.5rem;
+}
+
+.FormSection {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 0.5rem;
+}
+
+.AuthError {
+  @extend subheading;
+  text-align: center;
+  padding: 0.5rem;
+  color: red;
+}

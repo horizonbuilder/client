@@ -1,0 +1,59 @@
+@import 'type';
+@import 'colors';
+
+/* .LoadingIndicator {
+  display: flex;
+
+  div {
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+
+    &:last-child {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .LoadingText {
+    @extend section-heading;
+  }
+} */
+
+.LoadingIndicator {
+  /* display: flex; */
+
+  border: 3px solid $black-20;
+  border-top: 3px solid $soft-green;
+
+  border-radius: 50%;
+
+  /* animation: spin 1s cubic-bezier(0.91, 0.04, 0.345, 1.315) infinite; */
+  animation: spin 0.75s infinite;
+  width: 1rem;
+  height: 1rem;
+}
+
+.LoadingIndicatorLarge {
+  width: 6rem;
+  height: 6rem;
+  border-width: 6px;
+}
+
+.LoadingIndicatorMedium {
+  width: 1rem;
+  height: 1rem;
+}
+
+.LoadingIndicatorSmall {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  0% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}

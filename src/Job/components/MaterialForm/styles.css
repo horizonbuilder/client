@@ -1,0 +1,36 @@
+@import 'type';
+@import 'colors';
+
+.MaterialFormContainer {
+  display: flex;
+  div {
+    min-width: auto;
+  }
+  button {
+    height: 20px;
+  }
+}
+
+.MaterialColumn {
+  width: 35%;
+}
+.QtyColumn {
+  width: 10%;
+}
+.UnitsColumn {
+  width: 10%;
+}
+.SupplierColumn {
+  width: 10%;
+}
+.ProfitColumn {
+  width: 10%;
+}
+.CostColumn {
+  width: 10%;
+}
+.TotalColumn {
+  width: 10%;
+}
+.ButtonColumn {
+}

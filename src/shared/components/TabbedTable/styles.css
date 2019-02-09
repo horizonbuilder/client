@@ -1,0 +1,45 @@
+@import 'colors';
+
+.TabbedTable {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.TabBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.Tab {
+  flex: 1;
+  border-radius: 3px;
+
+  transition: background 0.3s ease;
+}
+
+.TabActive {
+  flex: 1;
+  background: $white;
+  border-radius: 3px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 2px 4px 0 rgba(74, 74, 74, 0.15);
+}
+
+.TabContent {
+  background: $white;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(74, 74, 74, 0.15);
+  overflow: hidden;
+}
+
+.TabContentFirstTabOpen {
+  border-top-left-radius: 0;
+}
+
+.TabContentLastTabOpen {
+  border-top-right-radius: 0;
+}

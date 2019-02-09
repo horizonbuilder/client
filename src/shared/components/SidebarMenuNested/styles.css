@@ -1,0 +1,22 @@
+@import 'common';
+
+
+.SidebarSectionHeader {
+  @extend sidebar-section-header;
+}
+
+.SidebarSection {
+  @extend sidebar-section;
+}
+
+.SidebarSectionSelected {
+  @extend sidebar-section-selected;
+}
+
+.SidebarSectionItem {
+  @extend sidebar-section-item;
+}
+
+.SidebarSectionItemSelected {
+  @extend sidebar-section-item-selected;
+}

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseService #postFormRequest Successful response makes a post request with form headers params 1`] = `
+Object {
+  "body": URLSearchParams {},
+  "headers": Object {
+    "Authorization": "Bearer: token",
+  },
+  "method": "POST",
+}
+`;
+
+exports[`BaseService #postJSONRequest stringifies params into request body 1`] = `"{\\"test\\":\\"testval\\"}"`;

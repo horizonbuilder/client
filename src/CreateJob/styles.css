@@ -1,0 +1,41 @@
+@import 'colors';
+@import 'shadow';
+@import 'type';
+
+.CreateJob {
+  background: #f7f7f7;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CreateJobTitle {
+  @extend page-title;
+  margin: 0.5rem;
+}
+
+.CreateJobForm {
+  background: $white;
+  box-shadow: $standard-shadow;
+  border-radius: 3px;
+  padding: 0.5rem;
+  width: 30%;
+}
+
+.FormSection {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 0.5rem;
+}
+
+.AuthError {
+  @extend subheading;
+  text-align: center;
+  padding: 0.5rem;
+  color: red;
+}

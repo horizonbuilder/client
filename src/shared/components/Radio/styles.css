@@ -1,0 +1,97 @@
+@import 'colors';
+
+.Radio {
+  display: inline-block;
+  overflow: hidden;
+
+  &:hover{
+     cursor: pointer;
+   }
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .RadioContent{
+    display: flex;
+    align-items: center;
+
+    .RadioBox {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      border-radius: 50px;
+      border: 1px solid $color-greyscale-light;
+      background-color: $color-greyscale-white;
+      justify-content: center;
+      align-items: center;
+
+      .RadioFill {
+        height: 50%;
+        width: 50%;
+        background: $color-primary;
+        border-radius: 50px;
+      }
+    }
+
+    .RadioLabel {
+      color: $black-70;
+      text-transform: none;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+
+
+    &.Checked {
+      .RadioBox {
+        border-color: $color-primary;
+
+        .RadioFill{
+          background-color: $color-primary;
+        }
+      }
+    }
+
+    &.Disabled {
+      .RadioBox {
+        background-color: $color-greyscale-light;
+        border-color: $color-greyscale-light;
+      }
+
+      .RadioLabel {
+        color: $black-20;
+      }
+    }
+
+    &.Disabled.Checked{
+      .RadioBox {
+        border-color: $color-primary-light;
+
+        .RadioFill{
+          background-color: $color-primary-light;
+        }
+      }
+    }
+  }
+
+  &.formControl{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.25rem;
+
+    &.medium{
+       height: 56px;
+       margin-top: 7px;
+     }
+
+    &.small{
+       height: 38px;
+       margin-top: 25px;
+     }
+
+   }
+
+}

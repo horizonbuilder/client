@@ -1,0 +1,26 @@
+@import 'colors';
+
+.MainContent {
+  // box-shadow: -2px 1px 8px 0 $black-30;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  padding: 1rem 2rem;
+  /*padding-left: 0;
+  padding-bottom: 0;*/
+  overflow-y: auto;
+  background-color: $color-greyscale-lightest;
+
+  &.NoPadding {
+    padding: 0;
+  }
+}
+
+
+
+@media print {
+  .MainContent {
+    box-shadow: none;
+    padding: 0;
+  }
+}

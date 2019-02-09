@@ -1,0 +1,18 @@
+{
+  "name": "client",
+  "description": "",
+  "env": {
+    "BASE_SERVICE_URL": {
+      "description": "The api server's url for the client to make requests to",
+      "value": "https://terraceag-server-dev.herokuapp.com"
+    },
+    "MAPBOX_API_KEY": { "required": true }
+  },
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

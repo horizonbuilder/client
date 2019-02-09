@@ -1,0 +1,1 @@
+export const BlankPage: string;

@@ -1,0 +1,47 @@
+{
+  "__JWT_SECRET__": "__jWt-s3cReT__",
+  "__API_CACHE__": "__API_CACHE__",
+  "__SALES_LIBRARY_STATUS__": "__SALES_LIBRARY_STATUS__",
+  "LOGIN": "/login",
+  "SIGNUP": "/signup",
+
+  "CLIENTS": "/clients",
+  "CLIENT": "/clients/{client_id}",
+  "JOB_CLIENT": "/jobs/{job_id}/client",
+  "JOBS": "/jobs",
+  "JOB": "/jobs/{job_id}",
+  "JOB_FILES": "/jobs/{job_id}/files",
+  "JOB_FILE": "/jobs/{job_id}/files/{file_id}",
+
+  "ESTIMATES": "/jobs/{job_id}/estimates",
+  "ESTIMATE": "/jobs/{job_id}/estimates/{estimate_id}",
+  "ORDERS": "/jobs/{job_id}/orders",
+  "ORDER": "/jobs/{job_id}/orders/{order_id}",
+
+  "TRADES": "/jobs/{job_id}/estimates/{estimate_id}/trades",
+  "SERVICES": "/jobs/{job_id}/estimates/{estimate_id}/services",
+  "SERVICE": "/jobs/{job_id}/estimates/{estimate_id}/services/{service_id}",
+  "MATERIALS": "/jobs/{job_id}/services/{service_id}/materials",
+  "MATERIAL": "/jobs/{job_id}/materials/{material_id}",
+
+  "REPORT_TEMPLATES": "/report-templates",
+  "REPORT_TEMPLATE": "/report-templates/{template_id}",
+
+  "UPLOAD": "/upload?file-name={name}&file-type={type}",
+
+  "TEMPLATES": "/templates",
+  "TEMPLATE": "/templates/{template_id}",
+  "TEMPLATE_FIELDS": "/templates/{template_id}/delete-fields",
+  "TEMPLATE_GROUPS": "/templates/{template_id}/groups",
+  "TEMPLATE_GROUP": "/templates/{template_id}/groups/{group_id}",
+  "USER_ME": "/users/me",
+  "USERS": "/users",
+
+  "REPORT_PDF": "/pdf/{job_id}",
+  "INVITE_USER": "/signup/invite",
+  "CACHE_STATUS": "/cache/status",
+
+  "EXCEL_TEMPLATE": "/templates/excel/{job_id}",
+  "WORD_TEMPLATE_SALES": "/templates/word/sale/{sale_id}",
+  "WORD_TEMPLATE_JOBS": "/templates/word/job/{job_id}"
+}

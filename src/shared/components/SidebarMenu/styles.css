@@ -1,0 +1,186 @@
+@import 'colors';
+@import 'fonts';
+
+.NavigateBackLink {
+  font-weight: bold;
+  letter-spacing: 0.9px;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+
+  .BackIcon {
+    fill: #9b9b9b;
+  }
+}
+
+.SidebarSection {
+  //padding: 1em 3em;
+  transition: background 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 64px;
+
+  &:not(:last-child) {
+    margin-bottom: 0.65rem;
+  }
+
+  &.collapsed {
+    &:hover {
+      margin-left: 0px;
+    }
+  }
+
+  &.expanded {
+    margin-left: -3px;
+    color: #000;
+  }
+
+  &.expanded, &.collapsed {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    padding: 0.35rem;
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    .SidebarSectionHeader {
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      background-color: $color-greyscale-lightest;
+      border-left: 3px solid $color-greyscale-mid-light;
+      color: $color-greyscale-darker;
+
+      a {
+        margin-left: 0;
+      }
+    }
+  }
+
+  & a {
+    margin-left: 3px;
+  }
+}
+
+.SidebarSectionSelected {
+  @extend .SidebarSection;
+  /*background-color: $color-greyscale-lightest;
+  border-left: 3px solid $color-primary;
+  margin-left: -3px;*/
+  box-sizing: border-box;
+  font-family: $font-family-secondary;
+  background-color: $color-greyscale-lightest;
+
+  &.expanded {
+    margin-left: -3px;
+  }
+
+  &.collapsed {
+    margin-left: 0px;
+  }
+
+  &.expanded, &.collapsed {
+    color: #000;
+    border-left: 3px solid $color-primary;
+  }
+
+  a {
+    margin-left: 0;
+  }
+
+  .SidebarSectionIcon {
+    color: $color-primary;
+  }
+
+  .SidebarSectionHeader {
+    font-family: $font-family-secondary;
+    letter-spacing: 0.3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /*.SidebarSectionHeader, .SidebarSectionIcon {
+    margin-right: 3px;
+  }*/
+}
+
+.SidebarSectionHeader {
+  /*margin: 0.5rem 0;
+  margin-bottom: 0;*/
+  text-decoration: none;
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 0 0.25rem;
+  letter-spacing: 0;
+  line-height: 11px;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+a.SidebarSectionHeader {
+  &:hover,
+  &:active,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.SidebarSectionIcon {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
+.SidebarSectionItem {
+  color: #c4c4c4;
+  margin: 0.25rem 0;
+  padding-left: 0.75rem;
+  border-left: 4px solid rgba(0, 0, 0, 0);
+  transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.SidebarSectionSelected {
+  .SidebarSectionItem {
+    color: #b3b3b3;
+  }
+}
+
+.SidebarSectionItemSelected {
+  font-weight: 600;
+  color: #8c8c8c !important;
+  border-left: 4px solid rgba(0, 0, 0, 0.1);
+}

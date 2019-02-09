@@ -1,0 +1,71 @@
+@import 'fonts';
+@import 'metrics';
+
+html,
+body {
+  height: 100%;
+  font-family: $font-family-primary;
+  font-size: $font-size-default;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 300;
+}
+
+:global {
+  #app {
+    min-height: 100%;
+    display: flex;
+  }
+
+  #app > div {
+    flex: 1;
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  table {
+    min-width: 100%;
+    font-size: 1rem;
+    line-height: normal;
+    border-collapse: collapse;
+    color: $color-greyscale-darkest;
+
+    thead {
+      tr {
+        border-top: 1px solid $color-greyscale-light;
+        border-bottom: 1px solid $color-greyscale-light;
+
+        td {
+          padding: $spacing-10 !important;
+          color: $color-table-header;
+          text-transform: uppercase;
+          font-size: 0.75em;
+          line-height: normal !important;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: solid 1px rgba(0,0,0,0.05);
+
+        td {
+          padding: 1rem;
+        }
+
+        &:nth-child(odd) {
+           background: rgba(0,0,0,0.03);
+         }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,214 @@
+@import 'colors';
+
+.Photos {
+    width: 100%;
+}
+
+.PhotosHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*margin-bottom: 29.5px;*/
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $color-greyscale-light;
+    justify-content: space-between;
+    padding: 16.5px 0;
+
+    .PhotoHeaderTitleWrapper {
+        display: flex;   
+        align-items: center;
+
+        .PhotoHeaderTitle {
+            font-size: 1.5rem;
+            color: $color-greyscale-darkest;
+            width: 225px;
+            text-align: left;
+        }
+    }
+
+    .PhotoHeaderOptions {
+        display: flex;
+        align-items: center;
+        color: $color-greyscale-dark;
+        font-size: 0.85rem;
+    }
+
+    .PhotosHeaderTitle {
+        font-size: 1.5rem;
+        color: $color-greyscale-darkest;
+        padding-bottom: 10px;
+
+        &.active {
+            border-bottom-style: solid;
+            border-bottom-width: 3px;
+            border-bottom-color: $color-primary;
+            font-weight: bold;
+        }
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.PhotosBody {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    .TractsBodyNavigation {
+        min-width: 225px;
+        padding-top: 29.5px;
+    }
+    
+    .TractsBodyMain {
+        width: 60%;
+        padding-right: 30px;
+        padding-top: 29.5px;
+    }
+
+    .TractsPreview {
+        display: flex;
+        width: 40%;
+        max-width: 400px;
+        align-items: center;
+        justify-content: center;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-left-color: $color-greyscale-light;
+        padding-top: 29.5px;
+        padding-left: 25px;
+        padding-right: 25px;
+        box-sizing: border-box;
+        
+        p {
+            color: $color-greyscale-mid;
+            font-size: 1.25rem;
+        }
+
+        .ImagePreview {
+            align-self: flex-start;
+            width: 100%;
+
+            .ImageName {
+                font-size: 1rem;
+                color: $color-greyscale-darkest;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+
+            .ImageContainer {
+                width: 360px;
+                height: 225px;
+                margin-bottom: 30px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .ImageDescription {
+                font-size: 1rem;
+                color: $color-greyscale-dark;
+            }
+        } 
+    }
+}
+
+.SidebarNavigation {
+    padding: 0 20px;
+}
+
+.PhotoHeaderOptions button[type=primary] {
+    background-color: $color-primary;
+    color: $color-greyscale-white;
+    font: $font-family-secondary;
+  }
+  
+  .PhotoHeaderOptions button[type=secondary] {
+    background-color: $color-greyscale-light;
+    color: $color-greyscale-dark;
+    font: $font-family-secondary;
+  }
+
+.OkBtn {
+    background-color: $color-primary;
+    color: $color-greyscale-white !important;
+    font-family: $font-family-secondary !important;
+    margin-left: 10px;
+  }
+  
+  .CancelBtn {
+    background-color: $color-greyscale-light;
+    color: $color-greyscale-dark !important;
+    font-family: $font-family-secondary !important;
+    margin-left: 10px;
+  }
+
+.GalleryViewPicker {
+    display: flex;
+    border: 1px solid $black-20;
+    border-radius: 3px;
+  /*padding: 0.5rem 0;*/
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $black-70;
+}
+
+.GalleryViewPickerItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex: 1; */
+    padding: 12px 22px;
+    border-right: 1px solid $black-20;
+    color: $black-70;
+    /*width: 80px;*/
+    box-sizing: border-box;
+  
+    &:last-child {
+      border: none;
+    }
+  
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    svg {
+      height: 15px;
+      position: relative;
+      top: 1px;
+      fill: $black-50;
+    }
+  }
+  
+  .GalleryViewPickerItemSelected {
+    @extend .GalleryViewPickerItem;
+  
+    border-color: $color-primary;
+    background-color: $color-primary;
+    color: $color-greyscale-white;
+  
+    svg {
+      fill: $soft-green;
+    }
+  }
+
+  .inputContainer {
+    margin-top: 0 !important;
+    margin: 0;
+    margin-right: 10px;
+  }
+
+  .buttonContainer {
+      padding: 0 !important;
+      background-color: transparent;
+      border: none;
+  }

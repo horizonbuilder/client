@@ -1,0 +1,31 @@
+@import 'colors';
+
+.Sidebar {
+  background-color: $color-greyscale-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 1em 0;
+  width: 80px;
+  border-right: 1px solid $color-greyscale-light;
+  color: $color-greyscale-dark;
+  overflow: visible;
+
+  &.expanded {
+    width: 240px;
+  }
+
+  & > i {
+    margin-right: 1rem;
+    align-self: flex-end;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

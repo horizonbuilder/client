@@ -1,0 +1,14 @@
+@import 'colors';
+
+.showMoreLink{
+    color: $color-primary;
+
+    &:hover{
+         cursor: pointer;
+     }
+}
+
+.MoreModal {
+    padding: 10px 10px;
+    text-align: left;
+}

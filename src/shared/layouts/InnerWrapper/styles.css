@@ -1,0 +1,7 @@
+@import 'colors';
+
+.InnerWrapper {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 5% 10%;
+}

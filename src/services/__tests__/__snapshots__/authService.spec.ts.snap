@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthService #login returns false if login was not successful 1`] = `
+Object {
+  "error": "test",
+  "status": "nope!",
+}
+`;
+
+exports[`AuthService #signup returns false if signup was not successful 1`] = `
+Object {
+  "error": "test error",
+  "status": "nope!",
+}
+`;
+
+exports[`AuthService #signup returns true if signup was successful 1`] = `
+Object {
+  "status": "success",
+}
+`;

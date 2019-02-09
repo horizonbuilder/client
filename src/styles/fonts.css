@@ -1,0 +1,39 @@
+$font-family-primary: "InterUI-Regular";
+$font-family-secondary: "InterUI-Medium";
+$font-family-tertiary: "InterUI-Bold";
+
+
+$sourceSansPro: "Source Sans Pro", sans-serif;
+
+@font-face {
+    font-family: "InterUI-Regular";
+    src: url("/assets/fonts/InterUI-Regular.eot");
+    src: url("/assets/fonts/InterUI-Regular.woff2") format("woff2"),
+        url("/assets/fonts/InterUI-Regular.woff") format("woff"),
+        url("/assets/fonts/InterUI-Regular.ttf") format("truetype"),
+        url("/assets/fonts/InterUI-Regular.svg#InterUI-Regular") format("svg"),
+        url("/assets/fonts/InterUI-Regular.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "InterUI-Medium";
+    src: url("/assets/fonts/InterUI-Medium.eot");
+    src: url("/assets/fonts/InterUI-Medium.woff2") format("woff2"),
+        url("/assets/fonts/InterUI-Medium.woff") format("woff"),
+        url("/assets/fonts/InterUI-Medium.ttf") format("truetype"),
+        url("/assets/fonts/InterUI-Medium.svg#InterUI-Medium") format("svg"),
+        url("/assets/fonts/InterUI-Medium.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "InterUI-Bold";
+    src: url("/assets/fonts/InterUI-Bold.woff2") format("woff2"),
+        url("/assets/fonts/InterUI-Bold.woff") format("woff"),
+        url("/assets/fonts/InterUI-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}

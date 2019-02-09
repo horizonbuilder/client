@@ -1,0 +1,12 @@
+@import 'colors';
+
+.ProgressIndicator {
+  border: thin solid $black-20;
+  height: 10px;
+  width: 200px;
+}
+
+.ProgressIndicatorInner {
+  background-color: $soft-green;
+  height: 100%;
+}

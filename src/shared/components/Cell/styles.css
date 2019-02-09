@@ -1,0 +1,9 @@
+@import 'metrics';
+@import 'colors';
+
+.Cell {
+  display: inline-block;
+  width: 100%;
+  padding: $spacing-10;
+  color: $color-greyscale-darkest;
+}

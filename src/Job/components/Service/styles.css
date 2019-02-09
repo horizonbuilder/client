@@ -1,0 +1,51 @@
+@import 'type';
+@import 'colors';
+
+.MaterialsHeader {
+  display: flex;
+  border-bottom: thin solid gray;
+  color: gray;
+}
+
+.ServiceContainer {
+  width: 100%;
+  border: thin solid black;
+}
+
+.MaterialsContainer {
+  margin: 20px;
+}
+
+.ServiceName {
+  border-bottom: thin solid black;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.MaterialColumn {
+  width: 35%;
+}
+.QtyColumn {
+  width: 10%;
+}
+.UnitColumn {
+  width: 10%;
+}
+.SupplierColumn {
+  width: 10%;
+}
+.ProfitColumn {
+  width: 10%;
+}
+.CostColumn {
+  width: 10%;
+}
+.TotalColumn {
+  width: 10%;
+}
+
+.TotalCostRow {
+  position: relative;
+  left: 85%;
+  font-style: bold;
+}

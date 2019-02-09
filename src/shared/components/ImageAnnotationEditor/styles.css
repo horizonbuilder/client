@@ -1,0 +1,135 @@
+@import 'colors';
+
+.canvasWrapper{
+    & > div{
+          margin-bottom: 10px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+          display: inline-block;
+
+          & > input {
+                position: absolute;
+                padding: 0px;
+                z-index: 4;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                left: 0;
+                top: 0;
+                font-size: 18px;
+                margin-left: -1px;
+                margin-top: -2px;
+                letter-spacing: -0.5px;
+
+                &.active {
+                    transform: none;
+                }
+
+          }
+    }
+}
+
+.canvas{
+    display: inline-block;
+}
+
+.primaryToolbar {
+    display: flex;
+    /*margin: 0.5rem 0;
+    margin-left: 0.5rem;*/
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 23px;
+}
+
+.primaryToolbar__btn {
+    display: flex;
+    border: 1.08px solid $color-greyscale-light;
+    border-radius: 3px;
+    background-color: $color-greyscale-lightest;
+    height: 32px;
+  }
+
+.buttonGroup {
+    /*margin-right: 2em;
+    margin-bottom: 10px;
+    width: auto;
+    content: '';
+    display: table;*/
+    font-size: 1em;
+    padding: 0.5em 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+
+    & > button{
+        padding: 0;
+
+        & > div{
+              padding: 0.8em 1.5em;
+
+        }
+
+        :global {
+            .active{
+                 color: rgb(59, 153, 252);
+             }
+        }
+    }
+
+    .tools{
+        /*display: inline-block;
+        float: left;
+        margin-right: 0.5em;*/
+        font-size: 1em;
+        padding: 0.5em 0.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;  
+
+        & > button{
+            padding: 0;
+
+            & > div{
+                  padding: 0.8em 1.5em;
+
+            }
+
+            :global {
+                .active{
+                     color: rgb(59, 153, 252);
+                 }
+            }
+        }
+    }
+
+    button {
+        float: left;
+        box-shadow: none;
+        /*margin: 0 0.5em 0 0;*/
+        /*padding: 0.8em 1.5em;*/
+        padding: 0 !important;
+        font-size: 0.7em;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+
+        i {
+            font-size: 2em;
+            display: block;
+            /*margin-bottom: 0.25em;*/
+        }
+
+        &:last-child {
+             margin: 0;
+         }
+    }
+
+    a {
+        color: inherit;
+    }
+}

@@ -1,0 +1,56 @@
+@import 'shadow';
+@import 'colors';
+@import 'type';
+
+.EditableTableWrapper{
+    overflow: auto;
+
+    table {
+           border: 2px solid $color-greyscale-mid;
+
+        * {
+            font-size: 0.75rem;
+            outline: none;
+
+            &:global(.input-component){
+                margin: 0;
+             }
+        }
+
+        thead {
+            border-bottom: 2px solid $color-greyscale-mid;
+        }
+
+        thead, th {
+            color: $color-greyscale-mid;
+        }
+
+        tr {
+            background-color: #fff !important;
+            border-bottom: none;
+        }
+
+        th{
+            border-right: 1px solid $color-greyscale-mid;
+        }
+
+        td, th {
+            position: relative;
+            border-left: 1px solid $color-greyscale-mid;
+            padding: 5px 10px !important;
+            text-transform: none;
+            font-weight: 400;
+
+            &:first-child {
+                 border: none;
+             }
+        }
+    }
+
+
+    &.verticalTable{
+        th{
+            text-align: left;
+        }
+    }
+}

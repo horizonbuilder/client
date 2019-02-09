@@ -1,0 +1,300 @@
+@import 'colors';
+@import 'metrics';
+
+
+.InputContainer{
+  width: 250px;
+  min-width: 150px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  margin-bottom: 1.25rem;
+
+  [placeholder]{
+      text-overflow:ellipsis;
+  }
+
+  & > .inputElement{
+      font-size: 1rem;
+      width: 100%;
+      border: 2px solid $color-greyscale-light;
+      border-radius: 3px;
+      box-shadow: none;
+      background-color: $color-greyscale-white;
+      padding: 2px 15px;
+      box-sizing: border-box;
+      color: $color-greyscale-darker;
+      outline: none;
+
+      &:-webkit-autofill{
+          background-color: $color-greyscale-white !important;
+       }
+
+      &::placeholder {
+          color: $color-greyscale-mid;
+      }
+      &:-ms-input-placeholder {
+          color: $color-greyscale-mid;
+      }
+      &::-ms-input-placeholder {
+          color: $color-greyscale-mid;
+      }
+
+
+       &:focus{
+            &::placeholder {
+                 color: transparent;
+             }
+            &:-ms-input-placeholder {
+                 color: transparent;
+             }
+            &::-ms-input-placeholder {
+                 color: transparent;
+             }
+        }
+
+  }
+
+  & > textarea{
+    resize: none;
+  }
+
+  & > .label{
+        order: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        backface-visibility: hidden;
+        -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+
+  &.hasFloatingLabel > .label{
+       font-size: 1rem;
+       background-color: transparent;
+       color: $color-greyscale-mid;
+       max-width: calc(100% - 30px);
+
+       transform-origin: left top;
+
+       -webkit-touch-callout: none; /* iOS Safari */
+       -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+       user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+
+       transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease, margin 0.2s ease;
+
+        &:before{
+            display: none;
+         }
+
+        &:hover{
+            cursor: text;
+         }
+   }
+
+  &.hasFixedLabel > .label{
+       color: $color-greyscale-dark;
+
+       transform: translate(0, -0.5rem);
+       transform-origin: left top;
+
+
+       font-size: 0.8rem;
+       padding: 0 4px;
+       margin: 0;
+       transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease, margin 0.2s ease;
+   }
+
+   /**Icons**/
+
+    & > :global(.icon){
+          position: absolute;
+          color: $color-greyscale-dark;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+
+          &:hover{
+             cursor: text;
+          }
+    }
+
+    &.iconRight{
+        & > :global(.icon):last-child{
+              right: 0;
+          }
+    }
+  
+  /**Sizes**/
+  
+  &.medium{
+      margin-top: calc(0.25rem + 3px);
+
+      & > .inputElement{
+          height: 56px;
+      }
+
+      & > textarea.inputElement{
+          padding-top: calc(1rem + 2px) !important;
+          height: 157px;
+       }
+
+      &.hasFloatingLabel > .label{
+         transform: translate(15px, 1.25rem);
+      }
+      
+      &.hasFixedLabel > .label{
+          z-index: 2;
+          max-width: calc(100% - 1.5rem);
+          margin: 0 8px;
+
+          &:before{
+             content: ' ';
+             display: block;
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             width: 100%;
+             height: 0.5rem;
+             z-index: -1;
+             background-color: $color-greyscale-white;
+           }
+      }
+
+      & > :global(.icon){
+          height: 56px;
+          width: 56px;
+      }
+
+      &.iconRight{
+        & > .inputElement{
+            padding-right: 56px;
+         }
+
+        &.hasFloatingLabel > label{
+            padding-right: 41px;
+            box-sizing: border-box;
+         }
+       }
+  }
+
+  &.small{
+      margin-top: calc(1.125rem + 7px);
+
+      & > .inputElement{
+          border-width: 1px;
+          height: 38px;
+      }
+
+      & > textarea.inputElement{
+          padding-top: calc(0.35rem + 2px) !important;
+          height: 137px;
+      }
+
+      &.hasFloatingLabel > .label{
+         transform: translate(15px, 0.625rem);
+      }
+
+      &.hasFixedLabel > .label{
+          margin: -3px 0 0;
+          padding: 0;
+          max-width: 100%;
+          transform: translateY(-1rem);
+        }
+
+      & > :global(.icon){
+          height: 38px;
+          width: 38px;
+      }
+
+      &.iconRight{
+        & > .inputElement{
+            padding-right: 38px;
+         }
+
+        &.hasFloatingLabel > label{
+             padding-right: 23px;
+             box-sizing: border-box;
+         }
+       }
+  }
+
+
+  /**States**/
+  
+  &.focused{
+      & > .inputElement{
+        outline: none;
+        box-shadow: 0 0 0 3px $color-primary-light;
+        border-color: $color-primary;
+      }
+      
+      &.medium{
+          & > .label{
+              &:before{
+                 height: calc(0.5rem + 3px);
+               }
+          }
+      }
+  }
+  
+  
+  &.hasError{
+      margin-bottom: 0;
+
+      & > .inputElement{
+          outline: none;
+          box-shadow: none;
+          border-color: $color-notification-red;
+      }
+  
+      & > .error{
+          font-size: 0.75rem;
+          line-height: 1rem;
+          color: $color-greyscale-dark;
+          margin-top: 0.25rem;
+          -ms-flex-order: 3;
+          -webkit-order: 3;
+          order: 3;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 90%;
+          word-break: break-all;
+          word-wrap: break-word;
+        }
+  }
+  
+  &.fluid{
+     width: 100%;
+   }
+  
+  &.disabled{
+      & > .inputElement{
+          border-color: $color-greyscale-light;
+          background-color: $color-greyscale-lighter;
+          color: $color-greyscale-mid !important;
+      }
+  
+      & > .label{
+          &:before{
+             background-color: $color-greyscale-lighter !important;
+           }
+      }
+  }
+}

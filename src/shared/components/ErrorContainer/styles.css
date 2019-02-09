@@ -1,0 +1,7 @@
+@import 'grid';
+
+.BlankPage {
+  @extend content-center;
+
+  padding: 5rem;
+}

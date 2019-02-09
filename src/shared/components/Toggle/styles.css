@@ -1,0 +1,92 @@
+@import 'colors';
+
+.Toggle {
+  display: inline-block;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .ToggleContent {
+    display: flex;
+    align-items: center;
+
+    .ToggleBox {
+      width: 40px;
+      height: 20px;
+      display: flex;
+      border-radius: 50px;
+      border: 1px solid $color-greyscale-light;
+      background-color: $color-greyscale-white;
+      justify-content: center;
+      align-items: center;
+
+      .ToggleFill {
+        height: 80%;
+        width: 40%;
+        background: $color-greyscale-mid;
+        border-radius: 50px;
+        position: relative;
+        margin-right: 5px;
+        right: 20%;
+      }
+    }
+
+    .ToggleLabel {
+      color: $black-70;
+      text-transform: none;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+
+    &.Checked {
+      .ToggleBox {
+        border-color: $color-primary;
+
+        .ToggleFill {
+          background-color: $color-primary;
+          left: 25%;
+        }
+      }
+    }
+
+    &.Disabled {
+      .ToggleBox {
+        background-color: $color-greyscale-light;
+        border-color: $color-greyscale-light;
+      }
+
+      .ToggleLabel {
+        color: $black-20;
+      }
+    }
+
+    &.Disabled.Checked {
+      .ToggleBox {
+        border-color: $color-primary-light;
+
+        .ToggleFill {
+          background-color: $color-primary-light;
+        }
+      }
+    }
+  }
+
+  &.formControl {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.25rem;
+
+    &.medium {
+      height: 56px;
+      margin-top: 7px;
+    }
+
+    &.small {
+      height: 38px;
+      margin-top: 25px;
+    }
+  }
+}

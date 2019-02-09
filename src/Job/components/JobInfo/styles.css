@@ -1,0 +1,17 @@
+@import 'type';
+@import 'colors';
+@import 'metrics';
+
+.JobInfo {
+  .SingleBlock {
+    width: 100%;
+    background-color: $color-greyscale-white;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.03);
+    box-sizing: border-box;
+    padding: 25px 40px;
+  }
+}
+
+.SidebarNavigation {
+  padding: 0 20px;
+}

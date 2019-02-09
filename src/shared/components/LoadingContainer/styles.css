@@ -1,0 +1,11 @@
+@import 'grid';
+
+.BlankPage {
+  @extend content-center;
+
+  padding: 5rem;
+}
+
+.LoaderText {
+  margin-left: 0.2rem;
+}

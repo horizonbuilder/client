@@ -1,0 +1,94 @@
+@import 'type';
+@import 'colors';
+
+.ClientInfoForm {
+  /*background: #f5f5f5;
+  border: 1px solid $gray;
+  padding: 1rem;*/
+  width: 75%;
+  background-color: $color-greyscale-white;
+  box-shadow: 0 2px 9px 0 rgba(0,0,0,0.03);
+  padding: 25px 30px;
+  margin: 0 auto;
+}
+
+.ClientInfoFormSection {
+  display: flex;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ClientInfoFormInputContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: 50%;
+
+  &:nth-child(odd) {
+    padding-left: 0;
+  }
+
+  &:nth-child(even) {
+    padding-right: 0;
+  }
+}
+
+.ClientInfoFormSubmitSection {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.ClientInfoFormSubmitStatus {
+  @extend label;
+}
+
+.ClientFormGroup {
+  // flex: 1 0 auto;
+  width: 100%;
+  background-color: $color-greyscale-white;
+  box-shadow: 0 2px 9px 0 rgba(0,0,0,0.03);
+  padding: 25px 30px;
+}
+
+.ClientFormInputContainer {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.25rem;
+  /*padding: 0.5rem;*/
+  /*padding: 0 6%;*/
+  margin: 0.5rem 0;
+  box-sizing: border-box;
+  width: min-content;
+  /*min-width: 33.33%;*/
+  min-width: 50%;
+
+  &:nth-child(odd) {
+    /*padding-left: 0;*/
+  }
+
+  &:nth-child(even) {
+    /*padding-right: 0;*/
+  }
+}
+
+.ClientViewLabel {
+  font-size: 0.9rem;
+  color: $color-greyscale-mid;
+  font-family: $font-family-primary;
+  margin-bottom: 5px;
+}
+
+.ClientViewValue {
+  font-size: 1rem;
+  color: $color-greyscale-darker;
+}

@@ -1,0 +1,122 @@
+@import 'colors';
+@import 'fonts';
+
+.ModalSelect {
+  width: 1165px;
+}
+
+.ModalSelectHeader {
+  padding: 23px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-greyscale-light;
+}
+
+.ModalSelectHeaderTitle {
+  font-size: 1.5rem;
+  color: $color-greyscale-darkest;
+}
+
+.ModalSelectHeaderActions {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: 1rem;
+  }
+}
+
+.ModalSelectHeaderActionsSearch {
+  margin-top: 0 !important;
+  margin-bottom: 0;
+}
+
+.ModalSelectBody {
+  display: flex;
+  flex-direction: column;
+  /*display: grid;
+  grid-template-columns: repeat(4, 1fr);*/
+  /*align-items: center;*/
+  background-color: $color-greyscale-lightest;
+  padding: 24px;
+  /*grid-auto-rows: min-content;*/
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.ModalSelectBodyItems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  background-color: $color-greyscale-lightest;
+  grid-auto-rows: min-content;
+  height: 100%;
+  overflow-y: scroll;
+  margin-top: 30px;
+}
+
+.ModalSelectFooter {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.ModalSelectFooterItems {
+  flex: 1;
+  height: 40px;
+  overflow-y: hidden;
+  text-align: left;
+}
+
+.ModalSelectFooterMore {
+  width: 75px;
+  
+  button {
+    color: $color-primary !important;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.ModalSelectItem {
+  text-align: left;
+
+  label label{
+    font-weight: normal;
+    color: $color-greyscale-darker;
+    font-size: 0.9rem;
+  }
+}
+
+.ModalSelectItemGroup {
+  display: block;
+}
+
+.ModalSelectItemSubLabel {
+  padding: 0 0 20px 30px;
+  font-size: 0.75em;
+}
+
+.FilterHeaderClear {
+  border: none;
+  background-color: transparent;
+  color: $color-primary;
+  font-family: $font-family-secondary;
+  font-size: 0.90rem;    
+  height: auto !important;
+  padding: 0 !important;
+
+  &:hover {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    color: $color-primary;
+  }
+
+  &.small {
+    font-size: 0.75rem;  
+  }
+}

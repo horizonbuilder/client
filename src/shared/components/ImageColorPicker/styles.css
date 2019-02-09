@@ -1,0 +1,19 @@
+.colorPickerWrapper{
+  position: relative;
+
+.color{
+  /*width: 36px;
+  height: 2em;
+  margin-bottom: 0.5em;*/
+  width: 24px;
+  height: 5px;
+}
+
+.dropdown{
+  position: absolute;
+  z-index: 5;
+  margin-top: 15px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+}

@@ -1,0 +1,27 @@
+/* @import 'type'; */
+@import 'colors';
+
+.contextMenu {
+  text-align: left;
+  font-size: 1.25em;
+  position: absolute;
+  width: 10em;
+  box-shadow: 0 1px 2px 0 $black-30;
+  z-index: 3;
+  button {
+    text-align: left;
+    width: 100%;
+    padding: 1em;
+    background: #fafafa;
+    border: none;
+    border-radius: 0;
+  }
+  button:hover {
+    background: #eee;
+  }
+  hr {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+}

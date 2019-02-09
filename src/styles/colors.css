@@ -1,0 +1,39 @@
+$color-primary: #5dc160;
+$color-primary-light: rgba(93, 193, 96, 0.25);
+$color-primary-dark: #4a9b4c;
+
+$color-greyscale-darkest: #2d2f33;
+$color-greyscale-darker: #3a3d46;
+$color-greyscale-dark: #656979;
+$color-greyscale-mid: #9fa1ab;
+
+$color-greyscale-mid-light: #D4D5D6;
+$color-greyscale-light: #e4e4e5;
+$color-greyscale-lighter: #f0f0f0;
+$color-greyscale-lightest: #fbfbfb;
+$color-greyscale-white: #ffffff;
+
+$color-notification-blue: #3078e2;
+$color-notification-red: #f9423a;
+$color-notification-yellow: #ffd75e;
+
+/* legacy colors, check if can remove later */
+$soft-green: #5dc160;
+$softer-green: rgba(93, 193, 96, 0.7);
+$softest-green: rgba(93, 193, 96, 0.4);
+$off-white: #e2e3e5;
+$offer-white: #f5f5f5;
+$white: #ffffff;
+$gray: #e4e4e4;
+$black-80: rgba(0, 0, 0, 0.8);
+$black-70: rgba(0, 0, 0, 0.7);
+$black-50: rgba(0, 0, 0, 0.5);
+$black-40: rgba(0, 0, 0, 0.4);
+$black-30: rgba(0, 0, 0, 0.3);
+$black-20: rgba(0, 0, 0, 0.2);
+$black-15: rgba(0, 0, 0, 0.15);
+$black-08: rgba(0, 0, 0, 0.08);
+$black-05: rgba(0, 0, 0, 0.05);
+$yellow: #dbd743;
+$soft-red: #e93031;
+

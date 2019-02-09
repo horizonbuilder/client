@@ -1,0 +1,9 @@
+@import 'type';
+@import 'colors';
+
+.AddServiceButton {
+}
+
+.TradeContainer {
+  width: 100%;
+}

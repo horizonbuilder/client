@@ -1,0 +1,8 @@
+.imageElementWrapper{
+    margin-bottom: 10px;
+}
+
+.imageElementWrapper img{
+    max-width: 100%;
+    max-height: calc(90vh - 200px);
+}

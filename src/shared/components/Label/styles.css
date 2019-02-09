@@ -1,0 +1,6 @@
+@import 'type';
+
+.Label {
+  @extend input-label;
+  margin: 0.25rem 0;
+}

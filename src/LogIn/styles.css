@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'shadow';
+@import 'type';
+
+.LogIn {
+  background: #f7f7f7;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.SignUpCTA {
+  margin-top: 0.5rem;
+  @extend subheading;
+
+  a {
+    color: $soft-green;
+  }
+}

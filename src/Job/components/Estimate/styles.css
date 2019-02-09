@@ -1,0 +1,9 @@
+@import 'type';
+@import 'colors';
+
+.AddTradeButton {
+}
+
+.EstimateContainer {
+  width: 100%;
+}

@@ -1,0 +1,134 @@
+.Sidebar {
+  background-color: $color-greyscale-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 1em 0;
+  width: 350px;
+  border-right: 1px solid $color-greyscale-light;
+  color: $color-greyscale-dark;
+  overflow: visible;
+
+  &.expanded {
+    width: 240px;
+  }
+
+  & > i {
+    margin-right: 1rem;
+    align-self: flex-end;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.NavigateBackLink {
+  font-weight: bold;
+  letter-spacing: 0.9px;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+
+  .BackIcon {
+    fill: #9b9b9b;
+  }
+}
+
+.NavigateBackSection {
+  margin: 2rem 0;
+  padding: 0 3em;
+}
+
+.SidebarSection {
+  padding: 1em 3em;
+  transition: background 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.SidebarSectionSelected {
+  @extend .SidebarSection;
+  background: #e6e6e6;
+}
+
+.SidebarSectionHeader {
+  font-weight: 600;
+  color: #404042;
+  margin: 0.5rem 0;
+  text-decoration: none;
+}
+
+a.SidebarSectionHeader {
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+.SidebarSectionItem {
+  color: #c4c4c4;
+  margin: 0.25rem 0;
+  padding-left: 0.75rem;
+  border-left: 4px solid rgba(0, 0, 0, 0);
+  transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.SidebarSectionSelected {
+  .SidebarSectionItem {
+    color: #b3b3b3;
+  }
+}
+
+.SidebarSectionItemSelected {
+  font-weight: 600;
+  color: #8c8c8c !important;
+  border-left: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.BottomLinks {
+}
+
+.TopLinks {
+}
+
+.SubLinkList {
+  margin-left: 20px;
+  a {
+    display: block;
+  }
+}
+
+.LinkHeader {
+  button {
+    border: none;
+    display: inline;
+    color: blue;
+  }
+}

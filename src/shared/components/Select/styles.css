@@ -1,0 +1,408 @@
+@import 'colors';
+@import 'metrics';
+
+.SelectContainer{
+    width: 250px;
+    min-width: 150px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+
+    & > :global.react-select{
+        font-size: 1rem;
+        width: 100%;
+
+        .react-select__control, .react-select__menu{
+            border: 2px solid $color-greyscale-light;
+            border-radius: 3px;
+            box-shadow: none;
+            background-color: $color-greyscale-white;
+        }
+
+        .react-select__control{
+            &:hover{
+                cursor: pointer;
+            }
+
+             .react-select__value-container{
+                 overflow: hidden;
+                 padding: 2px 15px;
+
+                .react-select__placeholder{
+                    color: $color-greyscale-darker;
+                    position: relative;
+                    white-space: nowrap;
+                    max-width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 100%;
+                    transform: none;
+                    flex: 1;
+                }
+
+                .react-select__single-value{
+                    color: $color-greyscale-darker;
+                }
+             }
+
+
+            .react-select__indicator-separator{
+                display: none;
+            }
+
+            .react-select__dropdown-indicator{
+                padding: 1.25rem;
+
+                & > .icon{
+                    margin-top: -5px;
+                    color: $color-greyscale-dark;
+                 }
+            }
+
+            .react-select__clear-indicator{
+                color: $color-greyscale-dark;
+            }
+        }
+
+        .react-select__menu{
+            z-index: 3;
+
+            .react-select__option{
+                color: $color-greyscale-darker;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &:hover{
+                    cursor: pointer;
+                 }
+
+                &.react-select__option--is-focused{
+                    background-color: $color-primary-light;
+                }
+
+                &.react-select__option--is-selected{
+                    color: $color-greyscale-white;
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+
+
+    &.multi > :global.react-select{
+        .react-select__control {
+            .react-select__value-container--has-value{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+
+                & > * {
+                    display: inline;
+                    background-color: transparent;
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    & > .react-select__multi-value__label{
+                          display: inline;
+                          padding: 0;
+                    }
+
+                    & > .react-select__multi-value__remove{
+                          display: none;
+                    }
+
+                }
+
+            }
+        }
+
+        .react-select__menu{
+            & .react-select__option--is-selected{
+                  background-color: $color-greyscale-white;
+              }
+
+            & .react-select__option--is-focused{
+                  background-color: $color-primary-light;
+              }
+        }
+    }
+
+    & > .label{
+      order: -1;
+      padding: 0 4px;
+      font-size: 0.8rem;
+      position: relative;
+      color: $color-greyscale-dark;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /**Colors**/
+    &.dark {
+        & > :global.react-select{
+            .react-select__control {
+                background-color: $color-greyscale-darker;
+                border-color: #000;
+                border-width: 2px !important;
+            }
+        }
+
+        & > :global.react-select{
+            .react-select__control {
+                .react-select__value-container {
+                    .react-select__single-value, .react-select__placeholder {
+                        color: $color-greyscale-white;
+                    }
+                }
+            }
+            
+            .react-select__dropdown-indicator > .icon {
+                color: $color-greyscale-white;
+            }
+        }
+
+        & > :global.react-select {
+            .react-select__menu{
+                border-color: #000;
+                border-width: 2px !important;
+                background-color: $color-greyscale-darkest;
+                z-index: 3;
+    
+                .react-select__option{
+                    color: $color-greyscale-white;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+    
+                    &:hover{
+                        cursor: pointer;
+                     }
+    
+                    &.react-select__option--is-focused{
+                        background-color: $color-greyscale-darker;
+                    }
+    
+                    &.react-select__option--is-selected{
+                        color: $color-primary;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    &.light {
+        & > :global.react-select{
+            .react-select__control {
+                border-color: $color-greyscale-light;
+                border-width: 2px !important;
+            }
+        }
+
+        & > :global.react-select {
+            .react-select__menu{
+                border-color: $color-greyscale-light;
+                border-width: 2px !important;
+                z-index: 3;
+    
+                .react-select__option{
+                    color: #000;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+    
+                    &:hover{
+                        cursor: pointer;
+                     }
+    
+                    &.react-select__option--is-focused{
+                        background-color: $color-greyscale-lighter;
+                    }
+    
+                    &.react-select__option--is-selected{
+                        color: #000;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    /**Sizes**/
+
+    &.medium{
+        &.formControl{
+            margin-top: 7px;
+         }
+
+        & > :global.react-select{
+            .react-select__control {
+                height: 56px;
+            }
+        }
+
+        & > .label{
+            z-index: 2;
+            position: relative;
+            max-width: calc(100% - 1.5rem);
+            margin: 0 8px -0.5rem;
+
+            &:before{
+                 content: ' ';
+                 display: block;
+                 position: absolute;
+                 bottom: 0;
+                 left: 0;
+                 width: 100%;
+                 height: 0.5rem;
+                 z-index: -1;
+                 background-color: $color-greyscale-white;
+             }
+        }
+
+        &.multi > :global.react-select{
+            .react-select__control {
+                min-height: 56px;
+            }
+        }
+     }
+
+    &.small{
+        padding-top: 4px;
+
+        &.formControl{
+             margin-top: 21px;
+         }
+
+        & > :global.react-select{
+            .react-select__control, .react-select__menu{
+                border-width: 1px;
+            }
+
+            .react-select__control {
+                height: 36px;
+            }
+        }
+
+        & > .label{
+              transform: none;
+              margin: 3px 0;
+              padding: 0;
+              max-width: 100%;
+        }
+
+        &.multi > :global.react-select{
+            .react-select__control {
+                min-height: 36px;
+            }
+        }
+     }
+
+
+    /**States**/
+
+    &.focused{
+        & > :global.react-select{
+            .react-select__control{
+                outline: none;
+                box-shadow: 0 0 0 3px $color-primary-light;
+                border-color: $color-primary;
+            }
+        }
+
+        &.medium{
+            & > .label{
+                &:before{
+                    height: calc(0.5rem + 3px);
+                 }
+              }
+         }
+
+        &.dark {
+            & > :global.react-select{
+                .react-select__control{
+                    outline: none;
+                    box-shadow: none;
+                    border-color: #000;
+                }
+            }
+        }
+
+        &.light {
+            & > :global.react-select{
+                .react-select__control{
+                    outline: none;
+                    box-shadow: none;
+                    border-color: $color-greyscale-light;
+                }
+            }
+        }
+    }
+
+
+    &.hasError{
+        margin-bottom: 0;
+
+        & > :global.react-select{
+            .react-select__control{
+                outline: none;
+                box-shadow: none;
+                border-color: $color-notification-red;
+            }
+        }
+
+        & > .error{
+              font-size: 0.75rem;
+              line-height: 1rem;
+              color: $color-greyscale-dark;
+              margin-top: 0.25rem;
+              -ms-flex-order: 3;
+              -webkit-order: 3;
+              order: 3;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              width: 90%;
+              word-break: break-all;
+              word-wrap: break-word;
+          }
+     }
+
+    &.fluid{
+         width: 100%;
+    }
+
+    &.disabled{
+        & > :global.react-select{
+            .react-select__control{
+                border-color: $color-greyscale-light;
+                background-color: $color-greyscale-lighter;
+
+                .react-select__value-container{
+                    * {
+                        color: $color-greyscale-mid !important;
+                    }
+                }
+            }
+        }
+
+        & > .label{
+              &:before{
+                background-color: $color-greyscale-lighter;
+              }
+          }
+     }
+
+    &.hasLabel{
+         &.formControl{
+            margin-top: 0;
+          }
+     }
+}

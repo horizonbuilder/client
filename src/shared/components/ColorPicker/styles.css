@@ -1,0 +1,17 @@
+.colorSample {
+  height: 1em;
+  width: 1em;
+  border: 1px solid #333;
+  margin: 0 0.5em 1em 0;
+}
+
+.colorContainer {
+  position: relative;
+}
+
+.colorPickerPopout {
+  position: absolute;
+  left: 0;
+  top: 1em;
+  z-index: 10;
+}

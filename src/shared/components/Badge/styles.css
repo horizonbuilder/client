@@ -1,0 +1,55 @@
+@import 'type';
+@import 'colors';
+@import 'metrics';
+
+.Badge {
+    display: inline-block;
+    background-color: $color-greyscale-lighter;
+    border-radius: 3px;
+    padding: 6px;
+    font-size: 0.90rem;
+    color: $color-greyscale-dark;
+
+    &:not(:last-child) {
+         margin-right: 10px;
+         margin-bottom: 10px;
+     }
+
+    .BadgeContent {
+        display: flex;
+        align-items: center;
+
+        button {
+            padding: 3px 5px 0 5px !important;
+
+            & > i {
+                margin-left: 10px;
+                font-size: 0.85rem;
+            }
+        }
+    }
+}
+
+.removeBadgeButton {
+    border: none;
+    background-color: transparent;
+    height: auto !important;
+
+    *{
+        color: $color-greyscale-dark;
+    }
+
+    &:hover {
+         border: none;
+         background-color: transparent;
+
+         *{
+            color: $color-greyscale-darker;
+         }
+     }
+
+    &.small {
+         font-size: 0.75rem;
+     }
+}
+

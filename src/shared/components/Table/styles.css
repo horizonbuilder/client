@@ -1,0 +1,55 @@
+@import 'colors';
+@import 'metrics';
+
+$color-table-header: #93969f;
+
+.Table {
+  border: 0 !important;
+  font-size: 1rem;
+  line-height: normal;
+
+  :global .rt-tbody, :global .rt-table {
+    overflow: visible !important;
+  }
+
+  :global .rt-thead {
+    box-shadow: none !important;
+  }
+
+  :global .rt-th {
+    text-align: left !important;
+    padding: $spacing-10 !important;
+    border-right: none !important;
+    border-top: 1px solid $color-greyscale-light;
+    border-bottom: 1px solid $color-greyscale-light;
+    outline: none !important;
+    color: $color-table-header;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    line-height: normal !important;
+    box-shadow: none !important;
+  }
+
+  :global .rt-td {
+    overflow: visible;
+    border-right: none !important;
+    padding-left: 10px;
+  }
+
+  :global .rt-resizable-header-content {
+    float: left;
+  }
+
+  :global .-sort-asc:after {
+    font-family: FontAwesome;
+    content: "\f106";
+    float: left;
+    padding: 0 10px;
+  }
+  :global .-sort-desc:after {
+    font-family: FontAwesome;
+    content: "\f107";
+    float: left;
+    padding: 0 10px;
+  }
+}

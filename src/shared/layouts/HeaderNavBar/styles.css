@@ -1,0 +1,10 @@
+@import 'colors';
+
+.NavLink {
+  color: $color-greyscale-light;
+  padding: 0 8px;
+}
+
+.Logo {
+  height: 60px;
+}

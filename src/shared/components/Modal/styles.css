@@ -1,0 +1,91 @@
+@import 'colors';
+@import 'fonts';
+
+.Modal {
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 5%;
+  overflow: scroll;
+}
+
+.ModalInner {
+  background: white;
+  margin: 0 auto;
+  /*padding: 40px;*/
+  border-radius: 3px;
+  min-width: 10%;
+  width: fit-content;
+  text-align: center;
+
+  &:global(.fullWidth) {
+    width: 100%;
+  }
+}
+
+.ModalMedium {
+  width: 70%;
+}
+
+.ModalLarge {
+  width: 100%;
+}
+
+.ModalSmall {
+  width: 30%;
+
+  & .ModalFooter {
+    padding: 0;
+  }
+}
+
+.ModalFooter {
+  display: flex;
+  background-color: $color-greyscale-white;
+  justify-content: space-between;
+  padding: 23px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top: 1px solid $color-greyscale-light;
+}
+
+.ModalButtons {
+  /*position: relative;
+  top: 20px;*/
+  margin-left: auto;
+}
+
+.ModalButtons button {
+  display: inline-block;
+  margin: 5px;
+  height: auto;
+  padding: 5px;
+}
+
+.ModalButtons button[type=primary] {
+  background-color: $color-primary;
+  color: $color-greyscale-white;
+  font: $font-family-secondary;
+}
+
+.ModalButtons button[type=secondary] {
+  background-color: $color-greyscale-light;
+  color: $color-greyscale-dark;
+  font: $font-family-secondary;
+}
+
+.OkBtn {
+  background-color: $color-primary;
+  color: $color-greyscale-white !important;
+  font-family: $font-family-secondary !important;
+}
+
+.CancelBtn {
+  background-color: $color-greyscale-light;
+  color: $color-greyscale-dark !important;
+  font-family: $font-family-secondary !important;
+}

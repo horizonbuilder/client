@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WorkfilesService #getWorkfiles returns an array of workfiles 1`] = `
+Array [
+  Object {
+    "client_name": "client0",
+    "created_at": "2017-09-22T11:12:55.325Z",
+    "name": "workfile0",
+    "status": "in-progress",
+  },
+  Object {
+    "client_name": "client1",
+    "created_at": "2017-09-22T11:12:55.330Z",
+    "name": "workfile1",
+    "status": "prospective",
+  },
+]
+`;

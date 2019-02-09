@@ -1,0 +1,46 @@
+@import 'colors';
+@import 'metrics';
+
+.JobEdit {
+  position: relative;
+}
+
+.JobMenuButton {
+  padding: $spacing-10;
+  font-size: 1.5rem !important;
+  line-height: 1.5rem !important;
+  color: $color-greyscale-dark;
+  cursor: pointer;
+  text-align: center;
+}
+
+.JobMenu {
+  border: thin solid $black-20;
+  position: absolute;
+  right: 2rem;
+  top: -2rem;
+  background: white;
+  display: none;
+}
+
+.JobMenuOpen {
+  display: block;
+}
+
+.JobMenuItem {
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: white;
+  &:hover {
+    background-color: $offer-white;
+  }
+}
+
+.JobMenuModal {
+  width: 600px;
+}
+
+.JobMenuItemGroup {
+  display: block;
+  width: 500px;
+}

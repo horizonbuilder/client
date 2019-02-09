@@ -1,0 +1,8 @@
+@import 'colors';
+@import 'metrics';
+@import 'type';
+
+
+.table {
+  padding: $spacing-15;
+}

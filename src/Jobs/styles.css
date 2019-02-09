@@ -1,0 +1,18 @@
+@import 'colors';
+@import 'type';
+
+.BlankJobs {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NoJobsText {
+  @extend section-heading;
+}
+
+.CreateButton {
+  float: right;
+  padding-bottom: 2rem;
+}

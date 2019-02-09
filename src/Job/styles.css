@@ -1,0 +1,17 @@
+@import 'colors';
+@import 'type';
+
+.Welcome {
+  @extend page-title;
+}
+
+.JobLink {
+  color: $soft-green;
+  @extend section-heading;
+}
+
+.JobName {
+  @extend section-heading;
+
+  margin: 1rem;
+}

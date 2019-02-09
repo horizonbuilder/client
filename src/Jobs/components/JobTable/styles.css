@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'metrics';
+@import 'type';
+
+.tableJobs {
+  padding: $spacing-15;
+
+  .linkCell {
+    display: inline-block;
+    width: 100%;
+    padding: $spacing-10;
+    color: $color-greyscale-darkest;
+  }
+
+  .linkCellDark {
+    color: $color-greyscale-darkest;
+  }
+
+  .menuCell {
+    overflow: visible !important;
+  }
+}

@@ -1,0 +1,20 @@
+$font-size-default: 16px;
+
+$font-size-h1: 42px;
+$line-height-h1: 48px;
+$font-size-h2: 32px;
+$line-height-h2: 38px;
+$font-size-h3: 28px;
+$line-height-h3: 32px;
+$font-size-h4: 24px;
+$line-height-h4: 32px;
+
+$spacing-05: 0.5rem;
+$spacing-10: 1rem;
+$spacing-15: 1.5rem;
+$spacing-20: 2rem;
+$spacing-25: 2.5rem;
+$spacing-30: 3rem;
+$spacing-35: 3.5rem;
+$spacing-40: 4rem;
+$spacing-45: 4.5rem;
