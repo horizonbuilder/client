@@ -15,6 +15,7 @@ import { Order } from './Order';
 import { Service, ServiceInput } from './Service';
 import { Trade, TradeInput } from './Trade';
 import { Material, MaterialInput } from './Material';
+import { Labor, LaborInput } from './Labor';
 
 export {
   Section,
@@ -44,5 +45,7 @@ export {
   Trade,
   TradeInput,
   Material,
-  MaterialInput
+  MaterialInput,
+  Labor,
+  LaborInput
 };

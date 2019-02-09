@@ -10,7 +10,6 @@ import { Redirect } from 'react-router-dom';
 
 interface CreateJobState {
   name: string;
-  client_name: string;
   isSubmitting: boolean;
   isSubmitted: boolean;
   error?: string;
@@ -22,7 +21,6 @@ export class CreateJob extends React.Component<undefined, CreateJobState> {
 
     this.state = {
       name: '',
-      client_name: '',
       isSubmitting: false,
       isSubmitted: false,
       error: null
@@ -33,8 +31,7 @@ export class CreateJob extends React.Component<undefined, CreateJobState> {
     this.setState({ isSubmitting: true });
 
     const job = await JobService.createJob({
-      name: this.state.name,
-      client_name: this.state.client_name
+      name: this.state.name
     });
 
     this.setState({ isSubmitted: true });
@@ -43,9 +40,9 @@ export class CreateJob extends React.Component<undefined, CreateJobState> {
   }
 
   isButtonActive(): boolean {
-    const { isSubmitting, name, client_name } = this.state;
+    const { isSubmitting, name } = this.state;
 
-    return Boolean(name) && Boolean(client_name) && !isSubmitting;
+    return Boolean(name) && !isSubmitting;
   }
 
   render() {
@@ -72,18 +69,6 @@ export class CreateJob extends React.Component<undefined, CreateJobState> {
               name="name"
               onChange={e => this.setState({ name: e.target.value })}
               value={this.state.name}
-            />
-          </div>
-
-          <div className={styles.FormSection}>
-            <Label htmlFor="client_name">Client name</Label>
-            <Input
-              fluid
-              placeholder="Client name"
-              id="client_name"
-              name="client_name"
-              onChange={e => this.setState({ client_name: e.target.value })}
-              value={this.state.client_name}
             />
           </div>
 

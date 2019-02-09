@@ -4,8 +4,7 @@ import BaseService from './baseService';
 export default class EstimatesService extends BaseService {
   static estimatesRoute = SERVICES.ESTIMATES;
   static estimateRoute = SERVICES.ESTIMATE;
-
-  // static requestCache: Map<string, Array<IEstimate> | IEstimate> = new Map();
+  static totalCostRoute = SERVICES.TOTAL_COST;
 
   public static async getEstimates(job_id: number): Promise<Array<IEstimate>> {
     return await this.getRequest<Array<IEstimate>>(
@@ -37,6 +36,15 @@ export default class EstimatesService extends BaseService {
   public static async deleteEstimate(id: number): Promise<string> {
     return await this.deleteRequest<string>(
       this.buildRoute(this.estimateRoute, { estimate_id: id })
+    );
+  }
+
+  public static async getTotalCost(
+    job_id: number | string,
+    estimate_id: number | string
+  ): Promise<number> {
+    return await this.getRequest<number>(
+      this.buildRoute(this.totalCostRoute, { job_id, estimate_id })
     );
   }
 }

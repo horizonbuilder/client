@@ -10,5 +10,4 @@ export interface Job {
 
 export interface JobInput {
   name: string;
-  client_name: string;
 }

@@ -4,6 +4,7 @@ import * as classnames from 'classnames';
 import { RouteComponentProps } from 'react-router-dom';
 import TradesService from '../../../services/trades';
 import ServicesService from '../../../services/jobServices';
+import EstimatesService from '../../../services/estimates';
 import { Trade as ITrade, Service as IService } from '../../../types';
 import { Button } from '../../../shared/components/Button';
 import { Modal } from '../../../shared/components/Modal';
@@ -16,8 +17,6 @@ export interface EstimateProps {
   estimateId: string;
 }
 
-type IEditable<T> = { [P in keyof T]?: T[P] };
-
 export interface EstimateState {
   trades: ITrade[];
   services: IService[];
@@ -25,6 +24,7 @@ export interface EstimateState {
   isSaving: boolean;
   showTradeModal: boolean;
   newTradeName: string;
+  totalCost: number;
 }
 
 export class Estimate extends React.Component<RouteComponentProps<EstimateProps>, EstimateState> {
@@ -39,16 +39,16 @@ export class Estimate extends React.Component<RouteComponentProps<EstimateProps>
       trades: [],
       services: [],
       showTradeModal: false,
-      newTradeName: ''
+      newTradeName: '',
+      totalCost: 0
     };
   }
 
   componentDidMount() {
     this.mounted = true;
-    const { jobId, estimateId } = this.props.match.params;
-
-    this.loadTrades(jobId, estimateId);
-    this.loadServices(jobId, estimateId);
+    this.loadTrades();
+    this.loadServices();
+    this.getTotalCost();
   }
 
   componentWillUnmount() {
@@ -56,13 +56,13 @@ export class Estimate extends React.Component<RouteComponentProps<EstimateProps>
   }
 
   componentWillReceiveProps(nextProps: RouteComponentProps<EstimateProps>) {
-    const { jobId, estimateId } = nextProps.match.params;
-
-    this.loadTrades(jobId, estimateId);
-    this.loadServices(jobId, estimateId);
+    this.loadTrades();
+    this.loadServices();
+    this.getTotalCost();
   }
 
-  async loadTrades(jobId: string, estimateId: string): Promise<void> {
+  async loadTrades(): Promise<void> {
+    const { jobId, estimateId } = this.props.match.params;
     this.setState({
       isLoading: true
     });
@@ -75,7 +75,8 @@ export class Estimate extends React.Component<RouteComponentProps<EstimateProps>
     });
   }
 
-  async loadServices(jobId: string, estimateId: string): Promise<void> {
+  async loadServices(): Promise<void> {
+    const { jobId, estimateId } = this.props.match.params;
     this.setState({
       isLoading: true
     });
@@ -105,8 +106,14 @@ export class Estimate extends React.Component<RouteComponentProps<EstimateProps>
     });
   }
 
+  async getTotalCost() {
+    const { jobId, estimateId } = this.props.match.params;
+    let totalCost = await EstimatesService.getTotalCost(jobId, estimateId);
+    this.setState({ totalCost });
+  }
+
   render() {
-    let { isSaving, trades, showTradeModal, services } = this.state;
+    let { isSaving, trades, showTradeModal, services, totalCost } = this.state;
     let { jobId, estimateId } = this.props.match.params;
 
     return (
@@ -119,6 +126,7 @@ export class Estimate extends React.Component<RouteComponentProps<EstimateProps>
               services={tradeServices}
               jobId={parseInt(jobId)}
               estimateId={parseInt(estimateId)}
+              updateTotal={this.getTotalCost.bind(this)}
               key={t.id}
             />
           );
@@ -141,6 +149,18 @@ export class Estimate extends React.Component<RouteComponentProps<EstimateProps>
         </Modal>
         <div className={styles.AddTradeButton}>
           <Button onClick={() => this.setState({ showTradeModal: true })}>Add Trade</Button>
+        </div>
+        <div className={styles.TotalsContainer}>
+          <div>Total</div>
+          <div>{totalCost}</div>
+          <div>+ Shipping</div>
+          <Input fluid id="shipping" name="shipping" onChange={e => {}} value="" />
+          <div>+ Taxes</div>
+          <Input fluid id="taxes" name="taxes" onChange={e => {}} value="" />
+          <div>- Discount</div>
+          <Input fluid id="discount" name="discount" onChange={e => {}} value="" />
+          <div>GRAND TOTAL</div>
+          <div>{totalCost}</div>
         </div>
       </div>
     );

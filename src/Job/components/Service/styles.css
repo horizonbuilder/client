@@ -43,6 +43,23 @@
 .TotalColumn {
   width: 10%;
 }
+.LaborHeader {
+  display: flex;
+  border-bottom: thin solid gray;
+  color: gray;
+}
+.LaborColumn {
+  width: 65%;
+}
+.HoursColumn {
+  width: 10%;
+}
+.CostPerHourColumn {
+  width: 10%;
+}
+.LaborTotalColumn {
+  width: 10%;
+}
 
 .TotalCostRow {
   position: relative;

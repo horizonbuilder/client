@@ -13,6 +13,7 @@ export interface TradeProps {
   services: IService[];
   jobId: number;
   estimateId: number;
+  updateTotal: Function;
 }
 
 export interface TradeState {
@@ -59,9 +60,11 @@ export class Trade extends React.Component<TradeProps, TradeState> {
 
     return (
       <div className={styles.TradeContainer}>
-        {trade.name}
+        <div className={styles.TradeName}>{trade.name}</div>
         <br />
-        {services.map(s => <Service service={s} jobId={jobId} />)}
+        {services.map(s => (
+          <Service service={s} jobId={jobId} updateTotal={this.props.updateTotal} />
+        ))}
         <Modal
           show={showServiceModal}
           showCancel={true}

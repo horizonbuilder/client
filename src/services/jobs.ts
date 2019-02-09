@@ -15,7 +15,7 @@ export default class JobsService extends BaseService {
   static requestCache: Map<string, Array<IJob> | IJob> = new Map();
 
   public static async getJobs(): Promise<Array<IJob>> {
-    return await this.getRequest<Array<IJob>>(this.jobsRoute, true);
+    return await this.getRequest<Array<IJob>>(this.jobsRoute);
   }
 
   public static async getJob(id: number): Promise<IJob> {

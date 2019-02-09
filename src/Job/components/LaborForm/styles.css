@@ -1,7 +1,7 @@
 @import 'type';
 @import 'colors';
 
-.MaterialFormContainer {
+.LaborFormContainer {
   display: flex;
   div {
     min-width: auto;
@@ -11,19 +11,10 @@
   }
 }
 
-.MaterialColumn {
-  width: 35%;
+.LaborColumn {
+  width: 65%;
 }
-.QtyColumn {
-  width: 10%;
-}
-.UnitsColumn {
-  width: 10%;
-}
-.SupplierColumn {
-  width: 10%;
-}
-.ProfitColumn {
+.HoursColumn {
   width: 10%;
 }
 .CostColumn {

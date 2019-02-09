@@ -12,6 +12,7 @@ export interface MaterialFormProps {
   material?: IMaterial;
   updateMaterial: Function;
   deleteMaterial: Function;
+  updateTotal: Function;
 }
 
 export interface MaterialFormState {
@@ -58,6 +59,7 @@ export class MaterialForm extends React.Component<MaterialFormProps, MaterialFor
     }
 
     this.setState({ material: newMaterial });
+    this.props.updateTotal();
   }
 
   async deleteMaterial() {
@@ -67,6 +69,7 @@ export class MaterialForm extends React.Component<MaterialFormProps, MaterialFor
     await MaterialsService.deleteMaterial(jobId, material.id);
 
     this.props.deleteMaterial(material.id);
+    this.props.updateTotal();
   }
 
   render() {
@@ -126,7 +129,7 @@ export class MaterialForm extends React.Component<MaterialFormProps, MaterialFor
             value={material.cost_per_unit || ''}
           />
         </div>
-        <div className={styles.TotalColumn}>{material.cost_per_unit * material.quantity}</div>
+        <div className={styles.TotalColumn}> ${material.cost_per_unit * material.quantity}</div>
         <div className={styles.ButtonColumn}>
           <button onClick={this.saveMaterial.bind(this)}>Save</button>
           <br />

@@ -23,6 +23,10 @@
   "SERVICE": "/jobs/{job_id}/estimates/{estimate_id}/services/{service_id}",
   "MATERIALS": "/jobs/{job_id}/services/{service_id}/materials",
   "MATERIAL": "/jobs/{job_id}/materials/{material_id}",
+  "LABORS": "/jobs/{job_id}/services/{service_id}/labor",
+  "LABOR": "/jobs/{job_id}/labor/{labor_id}",
+
+  "TOTAL_COST": "/jobs/{job_id}/estimates/{estimate_id}/total_cost",
 
   "REPORT_TEMPLATES": "/report-templates",
   "REPORT_TEMPLATE": "/report-templates/{template_id}",

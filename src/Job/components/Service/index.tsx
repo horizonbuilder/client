@@ -1,19 +1,23 @@
 import * as React from 'react';
 import * as styles from './styles.css';
 import * as classnames from 'classnames';
-import { Service as IService, Material as IMaterial } from '../../../types';
+import { Service as IService, Material as IMaterial, Labor as ILabor } from '../../../types';
 import MaterialsService from '../../../services/materials';
+import LaborService from '../../../services/labor';
 import { MaterialForm } from '../MaterialForm';
+import { LaborForm } from '../LaborForm';
 import { Button } from '../../../shared/components/Button';
 
 export interface ServiceProps {
   jobId: number;
   service: IService;
+  updateTotal: Function;
 }
 
 export interface ServiceState {
   isLoading: boolean;
   materials: IMaterial[];
+  labor: ILabor[];
 }
 
 export class Service extends React.Component<ServiceProps, ServiceState> {
@@ -22,7 +26,8 @@ export class Service extends React.Component<ServiceProps, ServiceState> {
 
     this.state = {
       isLoading: false,
-      materials: []
+      materials: [],
+      labor: []
     };
   }
 
@@ -30,6 +35,7 @@ export class Service extends React.Component<ServiceProps, ServiceState> {
     const { jobId, service } = this.props;
 
     this.loadMaterials(jobId, service.id);
+    this.loadLabor(jobId, service.id);
   }
 
   async loadMaterials(jobId: number, serviceId: number): Promise<void> {
@@ -53,6 +59,28 @@ export class Service extends React.Component<ServiceProps, ServiceState> {
 
     this.setState({
       materials,
+      isLoading: false
+    });
+  }
+
+  async loadLabor(jobId: number, serviceId: number): Promise<void> {
+    this.setState({
+      isLoading: true
+    });
+
+    let labor = await LaborService.getLabor(jobId, serviceId);
+    if (!labor.length)
+      labor = [
+        {
+          id: -1,
+          description: '',
+          hours: 0,
+          cost_per_hour: 0
+        }
+      ];
+
+    this.setState({
+      labor,
       isLoading: false
     });
   }
@@ -86,9 +114,42 @@ export class Service extends React.Component<ServiceProps, ServiceState> {
     this.setState({ materials });
   }
 
+  updateLabor(updatedLabor: ILabor) {
+    let { labor } = this.state;
+    let index = labor.findIndex(m => m.id == updatedLabor.id);
+    if (index != -1) labor.splice(index, 1, updatedLabor);
+    else labor.push(updatedLabor);
+
+    this.setState({ labor });
+  }
+
+  deleteLabor(labor_id: number) {
+    let { labor } = this.state;
+    labor = labor.filter(m => m.id != labor_id);
+    this.setState({ labor });
+  }
+
+  addNewLabor() {
+    let { labor } = this.state;
+    labor.push({
+      id: -1,
+      description: '',
+      hours: 0,
+      cost_per_hour: 0
+    });
+    this.setState({ labor });
+  }
+
+  getTotalCost() {
+    let { materials, labor } = this.state;
+    let materialTotal = materials.reduce((a, m) => a + m.quantity * m.cost_per_unit, 0);
+    let laborTotal = labor.reduce((a, l) => a + l.hours * l.cost_per_hour, 0);
+    return materialTotal + laborTotal;
+  }
+
   render() {
     let { service, jobId } = this.props;
-    let { materials } = this.state;
+    let { materials, labor } = this.state;
     return (
       <div className={styles.ServiceContainer}>
         <div className={styles.ServiceName}>{service.name}</div>
@@ -100,7 +161,7 @@ export class Service extends React.Component<ServiceProps, ServiceState> {
             <div className={styles.SupplierColumn}>Supplier $</div>
             <div className={styles.ProfitColumn}>Profit $/%</div>
             <div className={styles.CostColumn}>$/Unit</div>
-            <div className={styles.TotalColumn}>$</div>
+            <div className={styles.TotalColumn}>Total $</div>
           </div>
           {materials.map(m => (
             <MaterialForm
@@ -109,6 +170,23 @@ export class Service extends React.Component<ServiceProps, ServiceState> {
               material={m}
               updateMaterial={this.updateMaterial.bind(this)}
               deleteMaterial={this.deleteMaterial.bind(this)}
+              updateTotal={this.props.updateTotal}
+            />
+          ))}
+          <div className={styles.LaborHeader}>
+            <div className={styles.LaborColumn}>Labor</div>
+            <div className={styles.HoursColumn}>Hours</div>
+            <div className={styles.CostPerHourColumn}>$/Hour</div>
+            <div className={styles.LaborTotalColumn}>Total $</div>
+          </div>
+          {labor.map(l => (
+            <LaborForm
+              jobId={jobId}
+              serviceId={service.id}
+              labor={l}
+              updateLabor={this.updateLabor.bind(this)}
+              deleteLabor={this.deleteLabor.bind(this)}
+              updateTotal={this.props.updateTotal}
             />
           ))}
           <Button
@@ -117,10 +195,14 @@ export class Service extends React.Component<ServiceProps, ServiceState> {
           >
             + Material
           </Button>
+          <Button
+            disabled={labor.findIndex(l => l.id == -1) != -1}
+            onClick={this.addNewLabor.bind(this)}
+          >
+            + Labor
+          </Button>
         </div>
-        <div className={styles.TotalCostRow}>
-          {materials.reduce((a, m) => a + m.quantity * m.cost_per_unit, 0)}
-        </div>
+        <div className={styles.TotalCostRow}> ${this.getTotalCost()}</div>
       </div>
     );
   }

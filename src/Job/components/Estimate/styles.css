@@ -7,3 +7,7 @@
 .EstimateContainer {
   width: 100%;
 }
+
+.TotalsContainer {
+  float: right;
+}
